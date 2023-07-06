@@ -49,6 +49,15 @@ jobs:
               run: |
                   echo "release_tag=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
+            - name: Upload a Build Artifact
+              uses: actions/upload-artifact@v3.1.2
+              with:
+                # Artifact name
+                name: test
+                # A file, directory or wildcard pattern that describes what to upload
+                path: .
+                # The desired behavior if no files are found using the provided path.
+
             - name: Upload DevBuild as release
               run: |
                   gh release upload devbuild --clobber dist/*
@@ -78,11 +87,3 @@ jobs:
                   USERNAME: GitHub-Actions
 
 
-            - name: Upload a Build Artifact
-              uses: actions/upload-artifact@v3.1.2
-              with:
-                # Artifact name
-                name: test
-                # A file, directory or wildcard pattern that describes what to upload
-                path: .
-                # The desired behavior if no files are found using the provided path.
