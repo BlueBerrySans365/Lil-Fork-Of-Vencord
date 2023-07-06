@@ -15,15 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-import { BadgePosition, BadgeUserArgs, ProfileBadge } from "@api/Badges";
+
 import { definePluginSettings } from "@api/Settings";
 import { enableStyle } from "@api/Styles";
-import { Link } from "@components/Link"; //
+import { Link } from "@components/Link";
 import { Flex } from "@components/Flex";
-import ErrorBoundary from "@components/ErrorBoundary";
 import { Devs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
-import { Logger } from "@utils/Logger";
 import style from "./index.css?managed";
 
 
