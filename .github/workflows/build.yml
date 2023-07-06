@@ -60,6 +60,8 @@ jobs:
             - name: release
               uses: actions/create-release@v1
               id: create_release
+              run: |
+                echo "release_tag=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
               with:
                   draft: false
                   prerelease: false
