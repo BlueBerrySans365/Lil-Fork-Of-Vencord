@@ -18,7 +18,7 @@
 import { BadgePosition, BadgeUserArgs, ProfileBadge } from "@api/Badges";
 import { definePluginSettings } from "@api/Settings";
 import { enableStyle } from "@api/Styles";
-import { Link } from "@components/Link";
+import { Link } from "@components/Link"; //
 import { Flex } from "@components/Flex";
 import ErrorBoundary from "@components/ErrorBoundary";
 import { Devs } from "@utils/constants";
@@ -88,9 +88,9 @@ export default definePlugin({
 
     settingsAboutComponent: () => {
         return (
-            <Flex style={{ color: "#FFFFFF" ,width: "100%", justifyContent: "center" }}>
-            If you're using NSF Global - there is no problems
-            ~~<Link href="https://github.com/AutumnVN/usrbg#how-to-request-your-own-usrbg-banner">USRBG - CLICK HERE TO GET YOUR OWN BANNER</Link>~~
+            <Flex style={{ color: "#FFFFFF", width: "100%", justifyContent: "center" }}>
+                If you're using NSF Global - there is no problems
+                ~~<Link href="https://github.com/AutumnVN/usrbg#how-to-request-your-own-usrbg-banner">USRBG - CLICK HERE TO GET YOUR OWN BANNER</Link>~~
             </Flex>
         );
     },
@@ -123,12 +123,12 @@ export default definePlugin({
 
     async start() {
         enableStyle(style);
-            
-            const res = await fetch(settings.store.bruhURL);
-            if (res.ok)
-                data = await res.json();
 
-        }
+        const res = await fetch(settings.store.bruhURL);
+        if (res.ok)
+            data = await res.json();
+
+    }
 
 
 });
