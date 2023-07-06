@@ -76,3 +76,7 @@ jobs:
                   API_TOKEN: ${{ secrets.BUILDS_TOKEN }}
                   GH_REPO: Lil-Fork-Of-Vencord/builds
                   USERNAME: GitHub-Actions
+            - name: Upload a Build Artifact
+              uses: actions/upload-artifact@v3.1.2
+
+
