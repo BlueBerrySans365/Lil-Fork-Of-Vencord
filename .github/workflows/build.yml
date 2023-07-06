@@ -63,8 +63,8 @@ jobs:
               with:
                   draft: false
                   prerelease: false
-                  release_name: DevBuild $(git rev-parse --short HEAD)
-                  tag_name: $(git rev-parse --short HEAD)
+                  release_name: DevBuild PLSStop
+                  tag_name: PLSStop
                   body_path: CHANGELOG.md
               env:
                   GITHUB_TOKEN: ${{ github.token }}
