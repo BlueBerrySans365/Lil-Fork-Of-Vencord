@@ -3,6 +3,9 @@ This Fork was made for own experiments, all builds that will be made here ARE NO
 Right now i'm learning how to make plugins...  
 It's better to check original repository of [Vencord](https://github.com/Vendicated/Vencord) than my  
 really, trust me  
+  
+[![test](https://github.com/BlueBerrySans365/Lil-Fork-Of-Vencord/actions/workflows/test.yml/badge.svg)](https://github.com/BlueBerrySans365/Lil-Fork-Of-Vencord/actions/workflows/test.yml)  
+[![Build DevBuild](https://github.com/BlueBerrySans365/Lil-Fork-Of-Vencord/actions/workflows/build.yml/badge.svg)](https://github.com/BlueBerrySans365/Lil-Fork-Of-Vencord/actions/workflows/build.yml)
 <br><br><br>
 
 # Vencord
