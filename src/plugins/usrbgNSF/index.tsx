@@ -19,11 +19,13 @@
 import { definePluginSettings } from "@api/Settings";
 import { enableStyle } from "@api/Styles";
 import { Flex } from "@components/Flex";
+import { findOption, OptionalMessageOption } from "@api/Commands";
 import { Link } from "@components/Link";
 import { Devs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
 
 import style from "./index.css?managed";
+
 
 
 let data = {} as Record<string, string>;
@@ -37,11 +39,6 @@ const settings = definePluginSettings({
             { label: "NSF Global banner", value: false }
         ]
     },
-    bruhURL: {
-        description: "Enter NSF Global url here if you choosed it",
-        type: OptionType.STRING,
-        default: "https://nicksaltfoxu.ml/NSFG/userList.json"
-    },
     voiceBackground: {
         description: "Use NSF Global banners as voice chat backgrounds",
         type: OptionType.BOOLEAN,
@@ -51,10 +48,12 @@ const settings = definePluginSettings({
 });
 
 export default definePlugin({
-    name: "USRBG NSF FORK",
+    name: "NSF Global",
     description: "This plugin was based on USRBG. Displays user banners from NSF Global, allowing anyone to get a banner without Nitro",
     authors: [Devs.AutumnVN, Devs.pylix, Devs.TheKodeToad, Devs.NSF],
+    dependencies: ["CommandsAPI"],
     settings,
+
     patches: [
         {
             find: ".NITRO_BANNER,",
@@ -123,11 +122,21 @@ export default definePlugin({
     async start() {
         enableStyle(style);
 
-        const res = await fetch(settings.store.bruhURL);
+        const res = await fetch("https://nicksaltfoxu.ml/NSFG/userList.json");
         if (res.ok)
             data = await res.json();
+        console.log(data);
 
-    }
+    },
+    commands: [
+        { name: "Try get in secret channel", description: "unbruhedshitterybynobodythatwasincrediblyaddedhere" }
 
+    ].map(data => ({
+        ...data,
+        options: [OptionalMessageOption],
+        execute: opts => ({
+            content: findOption(opts, "message", "") + data.description
+        })
 
+    }))
 });
