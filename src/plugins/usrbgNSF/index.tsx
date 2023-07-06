@@ -18,10 +18,11 @@
 
 import { definePluginSettings } from "@api/Settings";
 import { enableStyle } from "@api/Styles";
-import { Link } from "@components/Link";
 import { Flex } from "@components/Flex";
+import { Link } from "@components/Link";
 import { Devs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
+
 import style from "./index.css?managed";
 
 
@@ -29,7 +30,7 @@ let data = {} as Record<string, string>;
 
 const settings = definePluginSettings({
     nitroFirst: {
-        description: "Banner to use if both Nitro and USRBG/NSF Global banners are present.",
+        description: "Banner to use if both Nitro and NSF Global banners are present.",
         type: OptionType.SELECT,
         options: [
             { label: "Nitro banner", value: true, default: true },
@@ -42,7 +43,7 @@ const settings = definePluginSettings({
         default: "https://nicksaltfoxu.ml/NSFG/userList.json"
     },
     voiceBackground: {
-        description: "Use USRBG banners as voice chat backgrounds",
+        description: "Use NSF Global banners as voice chat backgrounds",
         type: OptionType.BOOLEAN,
         default: true,
         restartNeeded: true
@@ -51,8 +52,8 @@ const settings = definePluginSettings({
 
 export default definePlugin({
     name: "USRBG NSF FORK",
-    description: "Displays user banners from USRBG, allowing anyone to get a banner without Nitro",
-    authors: [Devs.AutumnVN, Devs.pylix, Devs.TheKodeToad],
+    description: "This plugin was based on USRBG. Displays user banners from NSF Global, allowing anyone to get a banner without Nitro",
+    authors: [Devs.AutumnVN, Devs.pylix, Devs.TheKodeToad, Devs.NSF],
     settings,
     patches: [
         {
